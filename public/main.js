@@ -6,7 +6,7 @@ $(function() {
     '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
   ];
-  var auth = require('../../auth.json')
+  var auth = require('./auth.json')
 
   // Initialize variables
   var $window = $(window);
