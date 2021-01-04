@@ -91,7 +91,10 @@ ul {
 .chat.page {
   display: none;
 }
-
+/* Oof Page */
+.oof.page {
+  color: #FFF;
+}
 /* Font */
 
 .messages {
