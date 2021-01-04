@@ -42,14 +42,14 @@ $(function() {
     username = cleanInput($usernameInput.val().trim());
 
     // If the username is valid
-    if (username === auth.one.pwd) {
+    if (username) {
       $loginPage.fadeOut();
       $chatPage.show();
       $loginPage.off('click');
       $currentInput = $inputMessage.focus();
 
       // Tell the server your username
-      socket.emit('add user', JSON.stringify(auth.one.user));
+      socket.emit('add user', username);
     }
   } else {
     $oofPage.show();
