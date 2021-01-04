@@ -1,5 +1,5 @@
 $(function() {
-  var FADE_TIME = 150; // ms
+  var FADE_TIME = 300; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
     '#e21400', '#91580f', '#f8a700', '#f78b00',
@@ -102,7 +102,7 @@ $(function() {
   // Adds the visual chat typing message
   const addChatTyping = (data) => {
     data.typing = true;
-    data.message = 'is typing';
+    data.message = 'is typing a message...';
     addChatMessage(data);
   }
 
@@ -229,7 +229,7 @@ $(function() {
   socket.on('login', (data) => {
     connected = true;
     // Display the welcome message
-    var message = "Welcome to Socket.IO Chat – ";
+    var message = "Welcome to Chat Lounge– ";
     log(message, {
       prepend: true
     });
@@ -243,13 +243,13 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', (data) => {
-    log(data.username + ' joined');
+    log(data.username + ' joined. Hello!');
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user left', (data) => {
-    log(data.username + ' left');
+    log(data.username + ' left. Goodbye!');
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
@@ -265,18 +265,18 @@ $(function() {
   });
 
   socket.on('disconnect', () => {
-    log('you have been disconnected');
+    log('You have been disconnected. Reload the page.');
   });
 
   socket.on('reconnect', () => {
-    log('you have been reconnected');
+    log('You have been reconnected. Hooray!');
     if (username) {
       socket.emit('add user', username);
     }
   });
 
   socket.on('reconnect_error', () => {
-    log('attempt to reconnect has failed');
+    log('Aattempt to reconnect has failed');
   });
 
 });
