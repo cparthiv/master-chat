@@ -16,6 +16,7 @@ $(function() {
 
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
+  var $oofPage = $('.oof.page'); // Error Page
 
   // Prompt for setting a username
   var username;
@@ -50,8 +51,9 @@ $(function() {
       // Tell the server your username
       socket.emit('add user', JSON.stringify(auth.one.user));
     }
+  } else {
+    $oofPage.show();
   }
-
   // Sends a chat message
   const sendMessage = () => {
     var message = $inputMessage.val();
