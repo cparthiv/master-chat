@@ -48,7 +48,7 @@ $(function() {
       $currentInput = $inputMessage.focus();
 
       // Tell the server your username
-      socket.emit('add user', auth.one.user);
+      socket.emit('add user', JSON.stringify(auth.one.user));
     }
   }
 
