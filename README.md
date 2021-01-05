@@ -5,5 +5,7 @@
 * Cool
 * Smart
 * Coder
-* **Always Worship Parthiv!!!**
+* **Always Worship Parthiv!**
+
+
 #WorshipParthiv
