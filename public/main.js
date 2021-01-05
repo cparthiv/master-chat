@@ -1,11 +1,11 @@
 $(function() {
-  var FADE_TIME = 300; // ms
+  var FADE_TIME = 550; // ms
   var TYPING_TIMER_LENGTH = 400; // ms
   var COLORS = [
     '#e21400', '#91580f', '#f8a700', '#f78b00',
     '#58dc00', '#287b00', '#a8f07a', '#4ae8c4',
     '#3b88eb', '#3824aa', '#a700ff', '#d300e7'
-  ];=
+  ];
 
   // Initialize variables
   var $window = $(window);
@@ -15,7 +15,6 @@ $(function() {
 
   var $loginPage = $('.login.page'); // The login page
   var $chatPage = $('.chat.page'); // The chatroom page
-  var $oofPage = $('.oof.page'); // Error Page
 
   // Prompt for setting a username
   var username;
@@ -51,6 +50,7 @@ $(function() {
       socket.emit('add user', username);
     }
   }
+
   // Sends a chat message
   const sendMessage = () => {
     var message = $inputMessage.val();
@@ -64,7 +64,6 @@ $(function() {
         message: message
       });
       // tell server to execute 'new message' and send along one parameter
-      
       socket.emit('new message', message);
     }
   }
@@ -103,7 +102,7 @@ $(function() {
   // Adds the visual chat typing message
   const addChatTyping = (data) => {
     data.typing = true;
-    data.message = 'is typing a message...';
+    data.message = 'is typing';
     addChatMessage(data);
   }
 
@@ -230,7 +229,7 @@ $(function() {
   socket.on('login', (data) => {
     connected = true;
     // Display the welcome message
-    var message = "Welcome to Chat Lounge– ";
+    var message = "Welcome to Socket.IO Chat – ";
     log(message, {
       prepend: true
     });
@@ -244,13 +243,13 @@ $(function() {
 
   // Whenever the server emits 'user joined', log it in the chat body
   socket.on('user joined', (data) => {
-    log(data.username + ' joined. Hello!');
+    log(data.username + ' joined');
     addParticipantsMessage(data);
   });
 
   // Whenever the server emits 'user left', log it in the chat body
   socket.on('user left', (data) => {
-    log(data.username + ' left. Goodbye!');
+    log(data.username + ' left');
     addParticipantsMessage(data);
     removeChatTyping(data);
   });
@@ -266,18 +265,18 @@ $(function() {
   });
 
   socket.on('disconnect', () => {
-    log('You have been disconnected. Reload the page.');
+    log('you have been disconnected');
   });
 
   socket.on('reconnect', () => {
-    log('You have been reconnected. Hooray!');
+    log('you have been reconnected');
     if (username) {
       socket.emit('add user', username);
     }
   });
 
   socket.on('reconnect_error', () => {
-    log('Aattempt to reconnect has failed');
+    log('attempt to reconnect has failed');
   });
 
 });
