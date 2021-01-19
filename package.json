@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "Parthiv",
   "private": true,
+  "repository": "git+https://github.com/thealphadev/master-chat",
   "license": "BSD",
   "dependencies": {
     "express": "~4.17.1",
