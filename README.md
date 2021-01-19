@@ -1,11 +1,6 @@
-# Parthiv
+# Chatting
 
-## Why you should worship Parthiv.
-* Awesome
-* Cool
-* Smart
-* Coder
-* **Always Worship Parthiv!**
+**This is a basic chatting app.**
 
-
-# #WorshipParthiv
+## Author
+**Parthiv**: Development lead.
