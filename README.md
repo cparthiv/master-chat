@@ -11,3 +11,9 @@
 ```js
 console.log('test')
 ```
+
+---
+| Example | Description |
+| ----------- | ----------- |
+| Header | Title |
+| Paragraph | Text |
