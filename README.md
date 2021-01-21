@@ -26,3 +26,6 @@ console.log('test')
 
 [example link](https://willowsprep.com)
 
+*italic*
+**bold**
+~~strikethrough~~
