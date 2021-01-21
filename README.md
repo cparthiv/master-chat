@@ -17,3 +17,6 @@ console.log('test')
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text |
+
+- [] stufy
+- [x] play video games
