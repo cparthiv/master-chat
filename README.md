@@ -18,5 +18,5 @@ console.log('test')
 | Header | Title |
 | Paragraph | Text |
 
-- [] stufy
+- [ ] stufy
 - [x] play video games
